@@ -1,0 +1,15 @@
+:root {
+  --white: #FFFFFF;
+  --primary: #222427;
+  --accent-error: #FE6868;
+
+  --grey-100: #9E9E9E;
+  --grey-300: #F0F2F4;
+  --grey-600: #D8DADF;
+  --grey-900: #747575;
+
+}
+
+body {
+  margin: 0;
+}
