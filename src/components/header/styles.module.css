@@ -1,0 +1,29 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.headerContainer {
+  padding: 3rem 0 1rem;
+  border-bottom: 1px solid var(--black);
+  width: 100%;
+  max-width: var(--desktop-content-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerNavbar {
+  display: flex;
+  gap: 4rem;
+}
+
+.headerNavbar > a {
+  text-transform: uppercase;
+  color: var(--grey-100);
+}
+
+.headerNavbar > a:visited {
+  color: var(--grey-100);
+}
