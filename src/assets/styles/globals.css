@@ -41,6 +41,12 @@ main {
   justify-content: center;
 }
 
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 a {
   text-decoration: none;
 }
@@ -66,4 +72,11 @@ h2 {
 h3 {
   margin: 0 0 1rem;
   font-size: 1.875rem;
+}
+
+p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-transform: uppercase;
 }
