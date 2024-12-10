@@ -1,7 +1,5 @@
-import Image from 'next/image';
-
 import { BaseLink } from '@/components/base-link';
-import { options } from '@/constants';
+import { servicesOptions, advantagesOptions } from '@/constants';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -73,13 +71,36 @@ export default function Home() {
             <div className={styles.servicesSectionImageContainer}></div>
           </div>
           <div className={styles.servicesSectionOptionsList}>
-            {options.map((option) => (
+            {servicesOptions.map((option) => (
               <div key={option.key} className={styles.servicesSectionOption}>
                 <div className={styles.servicesSectionOptionImageContainer} />
                 <div>
                   <h3>{option.title}</h3>
                   <p>{option.text}</p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.advantagesSection}>
+        <div>
+          <h2 className={styles.advantagesSectionTitle}>
+            Наши преимущества и сильные стороны
+          </h2>
+          <div className={styles.advantagesSectionOptions}>
+            {advantagesOptions.map((options) => (
+              <div key={options.id} className={styles.advantagesSectionOption}>
+                {options.withImage && <div with-image="true" />}
+                {options.title && (
+                  <div>
+                    <h3>{options.title}</h3>
+                    <p className={styles.advantagesSectionOptionText}>
+                      {options.text}
+                    </p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
