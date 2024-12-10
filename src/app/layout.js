@@ -4,6 +4,7 @@ import russoOne from '@/assets/fonts/russo-one';
 import tildaSansVF from '@/assets/fonts/tilda-sans-vf';
 import '@/assets/styles/globals.css';
 import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
 
 export const metadata = {
   title: 'Energy ADK',
@@ -14,11 +15,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${russoOne.variable} ${tildaSansVF.variable}`}>
-        <Suspense fallback={null}>
-          <Header />
-        </Suspense>
+        <div>
+          <Suspense fallback={null}>
+            <Header />
+          </Suspense>
 
-        {children}
+          {children}
+
+          <Footer />
+        </div>
       </body>
     </html>
   );

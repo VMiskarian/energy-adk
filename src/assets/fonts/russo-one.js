@@ -1,10 +1,10 @@
 import { Russo_One } from 'next/font/google';
 
 const russoOne = Russo_One({
-  subsets: ['latin', 'cyrillic'], // Указываем нужные наборы символов
+  subsets: ['latin', 'cyrillic'],
   weight: '400',
   variable: '--font-russo-one',
-  display: 'swap', // Настраиваем поведение шрифта
+  display: 'swap',
 });
 
 export default russoOne;

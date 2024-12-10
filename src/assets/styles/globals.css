@@ -9,7 +9,19 @@
   --grey-600: #d8dadf;
   --grey-900: #747575;
 
-  --desktop-content-width: 78rem;
+  --content-width: 90rem;
+}
+
+@media screen and (max-width: 1600px) {
+  :root {
+    --content-width: 90rem;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  :root {
+    --content-width: 78rem;
+  }
 }
 
 body {
@@ -18,6 +30,36 @@ body {
   font-family: var(--font-tilda-sans-vf);
 }
 
+body > div {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 a {
   text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-russo-one);
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 6.25rem 0 3.25rem;
+  font-size: 5rem;
+}
+
+h2 {
+  margin: 0 0 2.5rem;
+  font-size: 3.625rem;
+}
+
+h3 {
+  margin: 0 0 1rem;
+  font-size: 1.875rem;
 }
