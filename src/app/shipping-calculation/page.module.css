@@ -1,0 +1,38 @@
+.shippingCalculationSection {
+  margin: 6.25rem 0;
+}
+
+.shippingCalculationSection > div {
+  width: 100%;
+  max-width: var(--content-width);
+}
+
+.shippingCalculationSection p {
+  color: var(--grey-100);
+  max-width: 31.75rem;
+}
+
+.shippingCalculationSectionContentWrapper {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.shippingCalculationSectionContentWrapper > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.shippingCalculationSectionImageContainer {
+  margin-top: 1.25rem;
+  width: 31.75rem;
+  height: 22rem;
+  border-bottom-right-radius: 8rem;
+  background-image: url('../../assets/images/rectangle-3.png');
+  background-size: cover;
+}
+
+.servicesSectionWhiteLink {
+  margin-top: 2.5rem;
+}
