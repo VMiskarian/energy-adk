@@ -63,7 +63,10 @@ export default function Home() {
                 <BaseLink href="" className={styles.servicesSectionWhiteLink}>
                   Заказать перевозку
                 </BaseLink>
-                <BaseLink href="" className={styles.servicesSectionPrimaryLink}>
+                <BaseLink
+                  href="/shipping-calculation"
+                  className={styles.servicesSectionPrimaryLink}
+                >
                   Расчет доставки
                 </BaseLink>
               </div>
@@ -72,7 +75,7 @@ export default function Home() {
           </div>
           <div className={styles.servicesSectionOptionsList}>
             {servicesOptions.map((option) => (
-              <div key={option.key} className={styles.servicesSectionOption}>
+              <div key={option.id} className={styles.servicesSectionOption}>
                 <div className={styles.servicesSectionOptionImageContainer} />
                 <div>
                   <h3>{option.title}</h3>
