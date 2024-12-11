@@ -20,7 +20,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.aboutCompanySection}>
+      <section id="aboutCompany" className={styles.aboutCompanySection}>
         <div>
           <div className={styles.aboutCompanySectionLeftColumn}>
             <h2 className={styles.aboutCompanySectionTitle}>О компании</h2>
@@ -54,7 +54,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.servicesSection}>
+      <section id="services" className={styles.servicesSection}>
         <div>
           <div className={styles.servicesSectionTopArea}>
             <div>

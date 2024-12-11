@@ -14,6 +14,8 @@
   --grey-900: #747575;
 
   --content-width: 90rem;
+
+  scroll-padding-top: 50px;
 }
 
 @media screen and (max-width: 1600px) {
@@ -56,6 +58,11 @@ body {
   margin: 0;
   background-color: var(--white);
   font-family: var(--font-tilda-sans-vf);
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+  scrollbar-gutter: stable;
 }
 
 body > div {

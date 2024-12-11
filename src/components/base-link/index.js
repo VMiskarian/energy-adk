@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './styles.module.css';
 
 export const BaseLink = ({ href, children, className }) => (
-  <Link href={href} className={`${styles.baseLink} ${className || ''}`}>
+  <Link href={href} className={`${styles.baseLink} ${className ?? ''}`}>
     {children}
   </Link>
 );

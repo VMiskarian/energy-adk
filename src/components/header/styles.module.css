@@ -36,7 +36,41 @@
   display: none;
 }
 
+.headerMobileNavbar {
+  padding: 1.5rem 1rem 3.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.headerMobileNavbar > nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.headerMobileNavbar a {
+  padding: 0.5rem 0;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 120%;
+  text-align: center;
+  color: var(--grey-100);
+}
+
+.headerCloseModalButton {
+  align-self: flex-end;
+  border: none;
+  background-color: transparent;
+}
+
 @media screen and (max-width: 768px) {
+  .header {
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+  }
+
   .headerContainer {
     padding: 1rem 0 0.5rem;
   }

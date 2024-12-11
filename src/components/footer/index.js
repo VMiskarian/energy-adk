@@ -5,9 +5,9 @@ export const Footer = () => {
   const year = date.getFullYear();
 
   return (
-    <footer className={styles.footer}>
+    <footer id="footer" className={styles.footer}>
       <div className={styles.footerContainer}>
-        <h3 className={styles.footerTitle}>Контакты</h3>
+        <h2 className={styles.footerTitle}>Контакты</h2>
         <ul className={styles.footerList}>
           <li className={styles.footerListItem}>
             <a
