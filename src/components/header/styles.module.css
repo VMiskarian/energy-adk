@@ -6,7 +6,7 @@
 
 .headerContainer {
   padding: 3rem 0 1rem;
-  border-bottom: 1px solid var(--black);
+  border-bottom: 1px solid var(--grey-600);
   width: 100%;
   max-width: var(--content-width);
   display: flex;
@@ -26,4 +26,31 @@
 
 .headerNavbar > a:visited {
   color: var(--grey-100);
+}
+
+.headerButtonsWrapper {
+  display: flex;
+}
+
+.headerMenuButton {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .headerContainer {
+    padding: 1rem 0 0.5rem;
+  }
+
+  .headerNavbar {
+    display: none;
+  }
+
+  .headerMenuButton {
+    margin-left: 1.25rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+  }
 }

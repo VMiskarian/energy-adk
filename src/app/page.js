@@ -78,7 +78,14 @@ export default function Home() {
               <div key={option.id} className={styles.servicesSectionOption}>
                 <div className={styles.servicesSectionOptionImageContainer} />
                 <div>
-                  <h3>{option.title}</h3>
+                  <div className={styles.servicesSectionOptionTitleWrapper}>
+                    <div
+                      className={
+                        styles.servicesSectionOptionMobileImageContainer
+                      }
+                    />
+                    <h3>{option.title}</h3>
+                  </div>
                   <p>{option.text}</p>
                 </div>
               </div>

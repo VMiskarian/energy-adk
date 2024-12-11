@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --white: #ffffff;
   --black: #000000;
@@ -14,13 +18,37 @@
 
 @media screen and (max-width: 1600px) {
   :root {
-    --content-width: 90rem;
+    --content-width: 84rem;
   }
 }
 
 @media screen and (max-width: 1440px) {
   :root {
     --content-width: 78rem;
+  }
+}
+
+@media screen and (max-width: 1344px) {
+  :root {
+    --content-width: 70rem;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  :root {
+    --content-width: 60rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --content-width: 22.5rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  :root {
+    --content-width: 21.375rem;
   }
 }
 
@@ -49,6 +77,12 @@ section {
 
 a {
   text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  a {
+    text-align: center;
+  }
 }
 
 h1,
@@ -80,4 +114,22 @@ p {
   font-size: 0.875rem;
   line-height: 1.25rem;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    margin: 4.625rem 0 1.25rem;
+    font-size: 2.5rem;
+    line-height: 120%;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 120%;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 120%;
+  }
 }
