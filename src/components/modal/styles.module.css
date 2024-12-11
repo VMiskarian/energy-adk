@@ -1,0 +1,13 @@
+.modal {
+  margin: 0;
+  width: 100vw;
+  max-width: 100vw;
+  border: none;
+  padding: 0;
+}
+
+.modal::backdrop {
+  filter: blur(0.75rem);
+  background-color: var(--grey-300);
+  opacity: 0.75;
+}
