@@ -36,3 +36,22 @@
 .servicesSectionWhiteLink {
   margin-top: 2.5rem;
 }
+
+@media screen and (max-width: 768px) {
+  .shippingCalculationSection {
+    margin: 2rem 0 2.5rem;
+  }
+
+  .shippingCalculationSectionContentWrapper {
+    flex-direction: column;
+  }
+
+  .shippingCalculationSectionImageContainer {
+    display: none;
+  }
+
+  .servicesSectionWhiteLink {
+    margin-top: 1.25rem;
+    width: 100%;
+  }
+}

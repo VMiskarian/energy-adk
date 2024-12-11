@@ -42,7 +42,7 @@
 
 @media screen and (max-width: 768px) {
   :root {
-    --content-width: 22.5rem;
+    --content-width: 90%;
   }
 }
 

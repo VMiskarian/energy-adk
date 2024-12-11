@@ -31,3 +31,28 @@
 .calculatorPriceArea input {
   text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+  .calculatorWrapper {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .calculatorWrapper p {
+    margin-bottom: 1rem;
+  }
+
+  .calculator {
+    flex-direction: column;
+  }
+
+  .calculator h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .calculatorPriceArea label {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+}
