@@ -91,3 +91,9 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+@media screen and (max-width: 768px) {
+  .countryListCountyName {
+    max-width: 20rem;
+  }
+}

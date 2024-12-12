@@ -31,6 +31,8 @@
 .serviceSelectorImage {
   border-top-left-radius: 2rem;
   border: 1px solid transparent;
+  max-width: 118px;
+  max-height: 132px;
 }
 
 .serviceSelectorInput[type='radio']:checked ~ .serviceSelectorImage {
@@ -54,4 +56,17 @@
 .serviceSelectorText {
   text-transform: none;
   color: var(--white);
+}
+
+@media screen and (max-width: 768px) {
+  .serviceSelector {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 1rem;
+  }
+
+  .serviceSelectorImage {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
