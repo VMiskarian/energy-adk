@@ -1,0 +1,35 @@
+.contactUsForm {
+  margin: 3.125rem auto;
+  padding: 2.5rem;
+  border-top-right-radius: 5rem;
+  background-color: var(--primary);
+  max-width: 37.5rem;
+}
+
+.contactUsForm > h3 {
+  color: var(--white);
+}
+
+.contactUsInputsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contactUsInputsWrapper > label > p {
+  text-transform: capitalize;
+  color: var(--white);
+}
+
+.contactUsInputsWrapper > label > input {
+  background-color: var(--grey-600);
+}
+
+.contactUsIconButton {
+  position: absolute;
+  top: 3.125rem;
+  right: 3.125rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
