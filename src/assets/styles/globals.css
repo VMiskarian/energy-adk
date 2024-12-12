@@ -140,3 +140,12 @@ p {
     line-height: 120%;
   }
 }
+
+dialog.mobile-navbar {
+  background-color: var(--white);
+}
+
+dialog:not(.mobile-navbar) {
+  height: 100vh;
+  max-height: 100vh;
+}
