@@ -2,14 +2,21 @@
 
 import { memo, useId } from 'react';
 import Image from 'next/image';
+import PropTypes from 'prop-types';
 
 import { servicesRadioButtonOptions } from '@/constants';
 import Checkbox from '@/assets/icons/checkbox.svg';
 
 import styles from './styles.module.css';
 
-const ServiceSelector = () => {
+const ServiceSelector = ({ value, onChange }) => {
   const id = useId();
+
+  const handleChange = (event) => {
+    if (onChange) {
+      onChange(event.target.value);
+    }
+  };
 
   return (
     <div className={styles.serviceSelectorWrapper}>
@@ -22,6 +29,8 @@ const ServiceSelector = () => {
               type="radio"
               value={option.value}
               name={`service-selector-${id}`}
+              checked={value === option.value}
+              onChange={handleChange}
             />
             <Image
               className={styles.serviceSelectorImage}
@@ -46,6 +55,11 @@ const ServiceSelector = () => {
       </div>
     </div>
   );
+};
+
+ServiceSelector.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 export default memo(ServiceSelector);

@@ -84,7 +84,7 @@ export const advantagesOptions = [
 export const transportationRadioButtonOptions = [
   { label: 'По России', value: 'По России' },
   { label: 'СНГ', value: 'СНГ' },
-  { label: 'Эспорт', value: 'Эспорт' },
+  { label: 'Экспорт', value: 'Экспорт' },
 ];
 
 export const servicesRadioButtonOptions = [

@@ -13,16 +13,25 @@ const countriesMap = countries.reduce((acc, country) => {
 }, {});
 
 const TelInput = ({
-  type = 'text',
   name,
   label,
   value,
+  placeholder,
   onChange,
+  onChangeCode,
   disabled = false,
 }) => {
   const listRef = useRef(null);
   const [selectedCountry, setSelectedCounty] = useState(countriesMap['RU']);
   const [showList, setShowList] = useState(false);
+
+  const selectCountry = (country) => {
+    const newSelectedCountry = countriesMap[country.iso];
+    setSelectedCounty(newSelectedCountry);
+    onChangeCode(newSelectedCountry.code);
+    onChange('');
+    setShowList(false);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -44,8 +53,9 @@ const TelInput = ({
       <input
         name={name}
         className={styles.input}
-        type={type}
+        type="tel"
         value={value}
+        placeholder={placeholder}
         onChange={(e) => {
           if (onChange) {
             onChange(e.target.value);
@@ -79,10 +89,7 @@ const TelInput = ({
                   ? styles.countryListItemButtonSelected
                   : ''
               }`}
-              onClick={() => {
-                setSelectedCounty(countriesMap[country.iso]);
-                setShowList(false);
-              }}
+              onClick={() => selectCountry(country)}
               title={country.name}
             >
               <Image src={country.flag} alt="flag" width={24} height={24} />
@@ -104,6 +111,7 @@ TelInput.propTypes = {
   type: PropTypes.oneOf(['text', 'password', 'email', 'number']),
   label: PropTypes.string,
   name: PropTypes.string,
+  placeholder: PropTypes.string,
   disabled: PropTypes.bool,
 };
 

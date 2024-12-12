@@ -9,6 +9,7 @@ const Input = ({
   name,
   label,
   value,
+  placeholder,
   onChange,
   disabled = false,
 }) => (
@@ -20,6 +21,7 @@ const Input = ({
       className={styles.input}
       type={type}
       value={value}
+      placeholder={placeholder}
       onChange={(e) => {
         if (onChange) {
           onChange(e.target.value);
@@ -31,6 +33,7 @@ const Input = ({
 );
 
 Input.propTypes = {
+  placeholder: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func,
   type: PropTypes.oneOf(['text', 'password', 'email', 'number']),

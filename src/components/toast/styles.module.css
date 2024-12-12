@@ -1,0 +1,32 @@
+.toast {
+  /* display: none; */
+  position: fixed;
+  top: -5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+  background-color: var(--accent-error);
+  color: var(--white);
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  transition: top 0.2s;
+}
+
+.toastShow {
+  top: 2rem;
+}
+
+.toast > span {
+  font-size: 0.875rem;
+  line-height: 120%;
+}
+
+.toast > button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  color: var(--white);
+  cursor: pointer;
+}
