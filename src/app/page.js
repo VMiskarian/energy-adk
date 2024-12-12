@@ -1,5 +1,6 @@
-import { BaseLink } from '@/components/base-link';
+import BaseLink from '@/components/base-link';
 import { servicesOptions, advantagesOptions } from '@/constants';
+
 import styles from './page.module.css';
 
 export default function Home() {

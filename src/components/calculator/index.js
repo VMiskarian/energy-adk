@@ -1,10 +1,12 @@
 'use client';
+
 import { useState, memo } from 'react';
 
-import { Input } from '@/components/input';
+import Input from '@/components/input';
+
 import styles from './styles.module.css';
 
-export const Calculator = () => {
+const Calculator = () => {
   const [distance, setDistance] = useState('');
 
   const price = distance * 1000;
@@ -44,3 +46,5 @@ export const Calculator = () => {
     </div>
   );
 };
+
+export default memo(Calculator);

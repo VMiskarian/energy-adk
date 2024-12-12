@@ -1,15 +1,10 @@
 'use client';
+import { memo } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './styles.module.css';
 
-export const Input = ({
-  type = 'text',
-  label,
-  value,
-  onChange,
-  disabled = false,
-}) => (
+const Input = ({ type = 'text', label, value, onChange, disabled = false }) => (
   <label className={styles.inputLabel}>
     {typeof label === 'string' && <p className={styles.inputText}>{label}</p>}
 
@@ -34,3 +29,5 @@ Input.propTypes = {
   label: PropTypes.string,
   disabled: PropTypes.bool,
 };
+
+export default memo(Input);

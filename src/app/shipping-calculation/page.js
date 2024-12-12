@@ -1,7 +1,8 @@
 import { Suspense } from 'react';
 
-import { BaseLink } from '@/components/base-link';
-import { Calculator } from '@/components/calculator';
+import BaseLink from '@/components/base-link';
+import Calculator from '@/components/calculator';
+
 import styles from './page.module.css';
 
 export default function ShippingCalculation() {
