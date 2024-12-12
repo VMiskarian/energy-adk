@@ -1,7 +1,9 @@
 import BaseLink from '@/components/base-link';
+import ContactUsForm from '@/components/contact-us-form';
 import { servicesOptions, advantagesOptions } from '@/constants';
 
 import styles from './page.module.css';
+import { Suspense } from 'react';
 
 export default function Home() {
   return (
@@ -12,7 +14,9 @@ export default function Home() {
             Энергия, на которую можно положиться
           </h1>
           <div className={styles.homeSectionBottomArea}>
-            <BaseLink href="/">Связаться с нами</BaseLink>
+            <Suspense fallback={null}>
+              <ContactUsForm>Связаться с нами</ContactUsForm>
+            </Suspense>
             <p>
               Надежный поставщик битума, масел, дизельного топлива и бензины для
               вашего бизнеса — качество, стабильность и профессиональный подход

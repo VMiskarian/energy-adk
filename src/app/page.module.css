@@ -159,22 +159,22 @@
 
 .servicesSectionOption:nth-child(1) .servicesSectionOptionMobileImageContainer,
 .servicesSectionOption:nth-child(1) .servicesSectionOptionImageContainer {
-  background-image: url('../assets/images/option-1.png');
+  background-image: url('/images/option-1.png');
 }
 
 .servicesSectionOption:nth-child(2) .servicesSectionOptionMobileImageContainer,
 .servicesSectionOption:nth-child(2) .servicesSectionOptionImageContainer {
-  background-image: url('../assets/images/option-2.png');
+  background-image: url('/images/option-2.png');
 }
 
 .servicesSectionOption:nth-child(3) .servicesSectionOptionMobileImageContainer,
 .servicesSectionOption:nth-child(3) .servicesSectionOptionImageContainer {
-  background-image: url('../assets/images/option-3.png');
+  background-image: url('/images/option-3.png');
 }
 
 .servicesSectionOption:nth-child(4) .servicesSectionOptionMobileImageContainer,
 .servicesSectionOption:nth-child(4) .servicesSectionOptionImageContainer {
-  background-image: url('../assets/images/option-4.png');
+  background-image: url('/images/option-4.png');
 }
 
 .advantagesSection {
@@ -211,7 +211,7 @@
     gap: 1.5rem;
   }
 
-  .homeSectionBottomArea > a {
+  .homeSectionBottomArea > button {
     order: 2;
     align-self: stretch;
     text-align: center;
