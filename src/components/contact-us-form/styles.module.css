@@ -33,3 +33,23 @@
   background-color: transparent;
   cursor: pointer;
 }
+
+.contactUsButtonWrapper {
+  margin-top: 2.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contactUsButtonWrapper > button {
+  color: var(--white);
+  border-color: var(--white);
+  background-color: var(--primary);
+}
+
+@media screen and (max-width: 768px) {
+  .contactUsIconButton {
+    top: 1rem;
+    right: 1rem;
+  }
+}

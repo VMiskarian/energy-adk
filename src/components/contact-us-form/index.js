@@ -15,6 +15,9 @@ import Cross from '@/assets/icons/cross.svg';
 
 import styles from './styles.module.css';
 
+const TelInput = dynamic(() => import('@/components/tel-input'), {
+  ssr: false,
+});
 const Modal = dynamic(() => import('@/components/modal'), {
   ssr: false,
 });
@@ -31,6 +34,11 @@ const ContactUsForm = ({ children, className }) => {
     modalRef.current?.close();
   };
 
+  const onSubmit = (event) => {
+    event.preventDefault();
+    console.dir(event.target);
+  };
+
   return (
     <>
       <Button type="button" onClick={showModal} className={className}>
@@ -38,27 +46,27 @@ const ContactUsForm = ({ children, className }) => {
       </Button>
 
       <Modal ref={modalRef}>
-        <div>
-          <form className={styles.contactUsForm}>
-            <h3>Отправить заявку</h3>
-            <div className={styles.contactUsInputsWrapper}>
-              <Input label="Ваше имя" />
-              <Input label="Email" type="email" />
-              <Input label="Телефон для связи" type="number" />
-              <PhoneInput country={country} value={phone} />
-            </div>
-            <ServiceSelector />
-            <RadioButtons title="Транспортировка" />
-          </form>
+        <form className={styles.contactUsForm} onSubmit={onSubmit}>
+          <h3>Отправить заявку</h3>
+          <div className={styles.contactUsInputsWrapper}>
+            <Input name="name" label="Ваше имя" />
+            <Input name="email" label="Email" type="email" />
+            <TelInput label="Телефон для связи" type="number" />
+          </div>
+          <ServiceSelector />
+          <RadioButtons title="Транспортировка" />
+          <div className={styles.contactUsButtonWrapper}>
+            <Button type="submit">Отправить</Button>
+          </div>
+        </form>
 
-          <button
-            type="button"
-            className={styles.contactUsIconButton}
-            onClick={closeModal}
-          >
-            <Image src={Cross} alt="Close" width={40} height={40} />
-          </button>
-        </div>
+        <button
+          type="button"
+          className={styles.contactUsIconButton}
+          onClick={closeModal}
+        >
+          <Image src={Cross} alt="Close" width={40} height={40} />
+        </button>
       </Modal>
     </>
   );

@@ -1,0 +1,93 @@
+.inputLabel {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.inputText {
+  margin-bottom: 0.5rem;
+  color: var(--grey-900);
+}
+
+.input {
+  padding: 1rem 1rem 1rem 5.5rem;
+  background-color: var(--grey-600);
+  color: var(--grey-900);
+  font-size: 0.875rem;
+  line-height: 1rem;
+  border: 0;
+  width: inherit;
+}
+
+.countryButton {
+  margin: 0;
+  padding: 0.5rem;
+  border: none;
+  width: max-content;
+  background-color: var(--grey-600);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  position: absolute;
+  bottom: 4px;
+}
+
+.countryButtonArrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--black);
+}
+
+.countryList {
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+  height: 12rem;
+  overflow-y: scroll;
+  position: absolute;
+  top: -16px;
+  transform: translateY(+50%);
+  background-color: var(--white);
+  z-index: 10;
+  list-style-type: none;
+}
+
+.countryListShow {
+  visibility: visible;
+}
+
+.countryListItemButton {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  margin: 0;
+  padding: 1rem 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 120%;
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.countryListItemButton:hover {
+  background-color: var(--grey-600);
+}
+
+.countryListItemButtonSelected {
+  background-color: var(--grey-300);
+}
+
+.countryListCountyName {
+  margin-left: 0.5rem;
+  display: inline-block;
+  max-width: 8rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
