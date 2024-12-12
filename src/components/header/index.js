@@ -59,7 +59,7 @@ export const Header = () => {
         </div>
       </header>
 
-      <Modal ref={modalRef}>
+      <Modal ref={modalRef} className="mobile-navbar">
         <div className={styles.headerMobileNavbar}>
           <button
             type="button"

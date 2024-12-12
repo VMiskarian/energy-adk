@@ -14,7 +14,7 @@ const ServiceSelector = () => {
   return (
     <div className={styles.serviceSelectorWrapper}>
       <p className={styles.serviceSelectorTitle}>услуги</p>
-      <div className={styles.serviceSelector}>
+      <div role="radiogroup" className={styles.serviceSelector}>
         {servicesRadioButtonOptions.map((option) => (
           <label key={option.label} className={styles.serviceSelectorOption}>
             <input

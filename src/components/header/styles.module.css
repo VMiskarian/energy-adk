@@ -64,6 +64,10 @@
   background-color: transparent;
 }
 
+.mobileNavbar {
+  background-color: var(--white);
+}
+
 @media screen and (max-width: 768px) {
   .header {
     position: sticky;
