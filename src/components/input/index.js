@@ -23,9 +23,9 @@ const Input = ({ type = 'text', label, value, onChange, disabled = false }) => (
 );
 
 Input.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   onChange: PropTypes.func,
-  type: PropTypes.string,
+  type: PropTypes.oneOf(['text', 'password', 'email', 'number']),
   label: PropTypes.string,
   disabled: PropTypes.bool,
 };
