@@ -80,3 +80,16 @@ export const advantagesOptions = [
     withImage: false,
   },
 ];
+
+export const transportationRadioButtonOptions = [
+  { label: 'По России', value: 'По России' },
+  { label: 'СНГ', value: 'СНГ' },
+  { label: 'Эспорт', value: 'Эспорт' },
+];
+
+export const servicesRadioButtonOptions = [
+  { label: 'Битум', value: 'Битум' },
+  { label: 'Эспорт', value: 'Эспорт' },
+  { label: 'Смазочные материалы', value: 'Смазочные материалы' },
+  { label: 'Услуги транспортировки', value: 'Услуги транспортировки' },
+];
