@@ -35,7 +35,7 @@
 .aboutCompanySection {
   padding: 8rem 0;
   background-repeat: no-repeat;
-  background-image: url('/images/rectangle-4.png');
+  background-image: url("/images/rectangle-4.webp");
   background-size: cover;
   background-color: var(--grey-100);
 }
@@ -70,12 +70,28 @@
   border-top-left-radius: 12rem;
   width: 29.125rem;
   height: 37.5rem;
-  background-image: url('/images/rectangle-1.png');
+  background-image: url("/images/rectangle-1.webp");
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column-reverse;
   color: var(--white);
+  position: relative;
+}
+
+.aboutCompanySectionRightColumn > p {
+  z-index: 2;
+}
+
+.aboutCompanySectionRightColumn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
 }
 
 .servicesSection {
@@ -117,7 +133,7 @@ a.servicesSectionPrimaryLink {
 .servicesSectionImageContainer {
   width: 29.125rem;
   height: 10.5rem;
-  background-image: url('/images/rectangle-2.png');
+  background-image: url("/images/rectangle-2.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -159,22 +175,22 @@ a.servicesSectionPrimaryLink {
 
 .servicesSectionOption:nth-child(1) .servicesSectionOptionMobileImageContainer,
 .servicesSectionOption:nth-child(1) .servicesSectionOptionImageContainer {
-  background-image: url('/images/option-1.png');
+  background-image: url("/images/option-1.webp");
 }
 
 .servicesSectionOption:nth-child(2) .servicesSectionOptionMobileImageContainer,
 .servicesSectionOption:nth-child(2) .servicesSectionOptionImageContainer {
-  background-image: url('/images/option-2.png');
+  background-image: url("/images/option-2.webp");
 }
 
 .servicesSectionOption:nth-child(3) .servicesSectionOptionMobileImageContainer,
 .servicesSectionOption:nth-child(3) .servicesSectionOptionImageContainer {
-  background-image: url('/images/option-3.png');
+  background-image: url("/images/option-3.webp");
 }
 
 .servicesSectionOption:nth-child(4) .servicesSectionOptionMobileImageContainer,
 .servicesSectionOption:nth-child(4) .servicesSectionOptionImageContainer {
-  background-image: url('/images/option-4.png');
+  background-image: url("/images/option-4.webp");
 }
 
 .advantagesSection {
@@ -197,7 +213,7 @@ a.servicesSectionPrimaryLink {
   width: 100%;
   height: 100%;
   height: 208px;
-  background-image: url('/images/rectangle-5.png');
+  background-image: url("/images/rectangle-5.webp");
   background-size: cover;
 }
 

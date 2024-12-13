@@ -98,6 +98,7 @@
     position: sticky;
     top: 0;
     background-color: var(--white);
+    z-index: 100;
   }
 
   .headerContainer {

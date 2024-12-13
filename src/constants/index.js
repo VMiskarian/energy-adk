@@ -65,21 +65,21 @@ export const transportationRadioButtonOptions = [
 ];
 
 export const servicesRadioButtonOptions = [
-  { label: "Битум", value: "Битум", image: "/images/option-1.png" },
+  { label: "Битум", value: "Битум", image: "/images/option-1.webp" },
   {
     label: "Дизельное топливо и бензин",
     value: "Дизельное топливо и бензин",
-    image: "/images/option-2.png",
+    image: "/images/option-2.webp",
   },
   {
     label: "Смазочные материалы",
     value: "Смазочные материалы",
-    image: "/images/option-3.png",
+    image: "/images/option-3.webp",
   },
   {
     label: "Услуги транспортировки",
     value: "Услуги транспортировки",
-    image: "/images/option-4.png",
+    image: "/images/option-4.webp",
   },
 ];
 

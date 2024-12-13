@@ -30,12 +30,12 @@
 
 .serviceSelectorImage {
   border-top-left-radius: 2rem;
-  border: 1px solid transparent;
+  border: 3px solid transparent;
   max-width: 118px;
   max-height: 132px;
 }
 
-.serviceSelectorInput[type='radio']:checked ~ .serviceSelectorImage {
+.serviceSelectorInput[type="radio"]:checked ~ .serviceSelectorImage {
   border-color: var(--white);
 }
 
@@ -48,7 +48,7 @@
   right: 0.5rem;
 }
 
-.serviceSelectorInput[type='radio']:checked ~ .serviceSelectorOptionIcon {
+.serviceSelectorInput[type="radio"]:checked ~ .serviceSelectorOptionIcon {
   /* display: block; */
   opacity: 1;
 }
@@ -60,9 +60,10 @@
 
 @media screen and (max-width: 768px) {
   .serviceSelector {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    row-gap: 1rem;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows: repeat(2, max-content);
+    gap: 1rem;
+    place-content: center;
   }
 
   .serviceSelectorImage {
