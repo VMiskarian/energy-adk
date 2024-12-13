@@ -35,7 +35,7 @@ export const Header = () => {
     <>
       <header className={styles.header}>
         <div className={styles.headerContainer}>
-          <Link href="/">
+          <Link href={'/' + params.locale ?? 'ru'}>
             <Image src={Logo} alt="Logo" width={130} height={45} />
           </Link>
           <nav className={styles.headerNavbar}>
@@ -46,8 +46,22 @@ export const Header = () => {
             ))}
           </nav>
           <div className={styles.headerButtonsWrapper}>
-            <button onClick={() => console.log('ru')}>РУС</button>
-            <button onClick={() => console.log('uz')}>УЗБ</button>
+            <Link
+              href="/ru"
+              className={`${styles.i18nLink} ${
+                params.locale === 'ru' ? styles.i18linkActive : ''
+              }`}
+            >
+              РУС
+            </Link>
+            <Link
+              href="/uz"
+              className={`${styles.i18nLink} ${
+                params.locale === 'uz' ? styles.i18linkActive : ''
+              }`}
+            >
+              УЗБ
+            </Link>
             <button
               type="button"
               className={styles.headerMenuButton}
