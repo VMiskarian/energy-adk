@@ -5,6 +5,10 @@
 .shippingCalculationSection > div {
   width: 100%;
   max-width: var(--content-width);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, max-content);
+  gap: 1.5rem 1.25rem;
 }
 
 .shippingCalculationSection p {
@@ -25,9 +29,6 @@
 }
 
 .shippingCalculationSectionImageContainer {
-  margin-top: 1.25rem;
-  width: 31.75rem;
-  height: 22rem;
   border-bottom-right-radius: 8rem;
   background-image: url("/images/rectangle-3.webp");
   background-size: cover;
@@ -37,6 +38,22 @@
   margin-top: 2.5rem;
 }
 
+@media screen and (max-width: 1344px) {
+  .shippingCalculationSection > div {
+    grid-template-columns: max-content;
+  }
+
+  .shippingCalculationSectionImageContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1344px) {
+  .shippingCalculationSection > div {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .shippingCalculationSection {
     margin: 2rem 0 2.5rem;
@@ -44,10 +61,6 @@
 
   .shippingCalculationSectionContentWrapper {
     flex-direction: column;
-  }
-
-  .shippingCalculationSectionImageContainer {
-    display: none;
   }
 
   .servicesSectionWhiteLink {

@@ -221,6 +221,18 @@ a.servicesSectionPrimaryLink {
   color: var(--grey-100);
 }
 
+@media screen and (max-width: 1024px) {
+  .servicesSectionOptionsList {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .advantagesSectionOptions {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+  }
+}
+
 @media screen and (max-width: 768px) {
   .homeSectionBottomArea {
     flex-direction: column;
@@ -265,11 +277,6 @@ a.servicesSectionPrimaryLink {
     gap: 0.75rem;
   }
 
-  .servicesSectionOptionsList {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-  }
-
   .servicesSectionOptionImageContainer {
     display: none;
   }
@@ -297,11 +304,6 @@ a.servicesSectionPrimaryLink {
 
   .advantagesSection h2 {
     margin-bottom: 1.25rem;
-  }
-
-  .advantagesSectionOptions {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, auto);
   }
 
   .advantagesSectionOptions div:nth-child(4) {

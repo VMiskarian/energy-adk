@@ -14,18 +14,12 @@ export default async function ShippingCalculation({ params }) {
   return (
     <section className={styles.shippingCalculationSection}>
       <div>
-        <div className={styles.shippingCalculationSectionContentWrapper}>
-          <div>
-            <h3>{tShippingCalculation["title"]}</h3>
-            <Suspense fallback={null}>
-              <Calculator />
-            </Suspense>
-          </div>
-          <div>
-            <p>{tShippingCalculation["text"]}</p>
-            <div className={styles.shippingCalculationSectionImageContainer} />
-          </div>
-        </div>
+        <h3>{tShippingCalculation["title"]}</h3>
+        <p>{tShippingCalculation["text"]}</p>
+        <Suspense fallback={null}>
+          <Calculator />
+        </Suspense>
+        <div className={styles.shippingCalculationSectionImageContainer} />
         <Suspense fallback={null}>
           <div className={styles.buttonWrapper}>
             <ContactUsForm>{tShippingCalculation["buttonText"]}</ContactUsForm>
