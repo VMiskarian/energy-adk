@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: var(--white);
 }
 
 .headerContainer {
@@ -30,6 +31,24 @@
 
 .headerButtonsWrapper {
   display: flex;
+  align-items: center;
+}
+
+.i18nLink {
+  display: inline-block;
+  font-family: var(--font-russo-one);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 120%;
+  color: var(--grey-100);
+}
+
+.i18nLink:first-child {
+  margin-right: 0.5rem;
+}
+
+.i18linkActive {
+  color: var(--primary);
 }
 
 .headerMenuButton {

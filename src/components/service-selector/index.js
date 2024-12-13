@@ -35,8 +35,8 @@ const ServiceSelector = ({ value, onChange }) => {
             <Image
               className={styles.serviceSelectorImage}
               src={option.image}
-              width={118}
-              height={132}
+              width={200}
+              height={220}
               aria-hidden
               alt=""
             />
