@@ -1,7 +1,6 @@
 import BaseLink from "@/components/base-link";
 import ContactUsForm from "@/components/contact-us-form";
 import { servicesOptions, advantagesOptions } from "@/constants";
-import { availableLanguages } from "@/constants";
 import getTranslation from "@/utils/i18n";
 
 import styles from "./page.module.css";
@@ -62,9 +61,9 @@ export default async function Home({ params }) {
                 {servicesSection["title"]}
               </h2>
               <div className={styles.servicesSectionLinkWrapper}>
-                <BaseLink href="" className={styles.servicesSectionWhiteLink}>
-                  {servicesSection["buttonText"]}
-                </BaseLink>
+                <Suspense fallback={null}>
+                  <ContactUsForm>{servicesSection["buttonText"]}</ContactUsForm>
+                </Suspense>
                 <BaseLink
                   href={`/${locale}/shipping-calculation`}
                   className={styles.servicesSectionPrimaryLink}

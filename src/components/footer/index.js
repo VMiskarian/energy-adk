@@ -11,7 +11,7 @@ export const Footer = ({ locale }) => {
   return (
     <footer id="footer" className={styles.footer}>
       <div className={styles.footerContainer}>
-        <h2 className={styles.footerTitle}>{tFooter["title"]}</h2>
+        <h3 className={styles.footerTitle}>{tFooter["title"]}</h3>
         <ul className={styles.footerList}>
           <li className={styles.footerListItem}>
             <a

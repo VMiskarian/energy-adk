@@ -29,11 +29,11 @@
   width: 31.75rem;
   height: 22rem;
   border-bottom-right-radius: 8rem;
-  background-image: url('/images/rectangle-3.png');
+  background-image: url("/images/rectangle-3.png");
   background-size: cover;
 }
 
-.servicesSectionWhiteLink {
+.buttonWrapper {
   margin-top: 2.5rem;
 }
 

@@ -46,6 +46,7 @@
   font-size: 0.875rem;
   line-height: 120%;
   color: var(--grey-100);
+  text-transform: uppercase;
 }
 
 .i18nLink:first-child {

@@ -1,33 +1,36 @@
-import { Suspense } from 'react';
+import { Suspense } from "react";
 
-import BaseLink from '@/components/base-link';
-import Calculator from '@/components/calculator';
+import Calculator from "@/components/calculator";
+import ContactUsForm from "@/components/contact-us-form";
+import getTranslation from "@/utils/i18n";
 
-import styles from './page.module.css';
+import styles from "./page.module.css";
 
-export default function ShippingCalculation() {
+export default async function ShippingCalculation({ params }) {
+  const locale = (await params).locale;
+  const t = getTranslation(locale);
+  const tShippingCalculation = t["shippingCalculationPage"];
+
   return (
     <section className={styles.shippingCalculationSection}>
       <div>
         <div className={styles.shippingCalculationSectionContentWrapper}>
           <div>
-            <h3>РАСЧИТАТЬ СТОИМОСТЬ ДОСТАВКИ</h3>
+            <h3>{tShippingCalculation["title"]}</h3>
             <Suspense fallback={null}>
               <Calculator />
             </Suspense>
           </div>
           <div>
-            <p>
-              тут вы можете расчитать примерную стоимость доставки груза. Для
-              более подробного расчёта, пожалуйста, отправьте заявку, чтобы
-              связаться с менеджером и уточнить детали
-            </p>
+            <p>{tShippingCalculation["text"]}</p>
             <div className={styles.shippingCalculationSectionImageContainer} />
           </div>
         </div>
-        <BaseLink href="" className={styles.servicesSectionWhiteLink}>
-          Оставить заявку
-        </BaseLink>
+        <Suspense fallback={null}>
+          <div className={styles.buttonWrapper}>
+            <ContactUsForm>{tShippingCalculation["buttonText"]}</ContactUsForm>
+          </div>
+        </Suspense>
       </div>
     </section>
   );
