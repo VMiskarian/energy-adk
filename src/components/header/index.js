@@ -35,7 +35,8 @@ export const Header = () => {
     <>
       <header className={styles.header}>
         <div className={styles.headerContainer}>
-          <Link href={'/' + params.locale ?? 'ru'}>
+          {/* <Link href={'/' + params.locale ?? 'ru'}> */}
+          <Link href="/">
             <Image src={Logo} alt="Logo" width={130} height={45} />
           </Link>
           <nav className={styles.headerNavbar}>
@@ -48,17 +49,19 @@ export const Header = () => {
           <div className={styles.headerButtonsWrapper}>
             <Link
               href="/ru"
-              className={`${styles.i18nLink} ${
-                params.locale === 'ru' ? styles.i18linkActive : ''
-              }`}
+              className={styles.i18nLink}
+              // className={`${styles.i18nLink} ${
+              //   params.locale === 'ru' ? styles.i18linkActive : ''
+              // }`}
             >
               РУС
             </Link>
             <Link
               href="/uz"
-              className={`${styles.i18nLink} ${
-                params.locale === 'uz' ? styles.i18linkActive : ''
-              }`}
+              className={styles.i18nLink}
+              // className={`${styles.i18nLink} ${
+              //   params.locale === 'uz' ? styles.i18linkActive : ''
+              // }`}
             >
               УЗБ
             </Link>

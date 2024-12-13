@@ -9,4 +9,10 @@
   text-transform: uppercase;
   background-color: var(--white);
   cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.button:hover {
+  color: var(--white);
+  background-color: var(--primary);
 }

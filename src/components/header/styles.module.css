@@ -23,10 +23,15 @@
 .headerNavbar > a {
   text-transform: uppercase;
   color: var(--grey-100);
+  transition: color 0.3s;
 }
 
 .headerNavbar > a:visited {
   color: var(--grey-100);
+}
+
+.headerNavbar > a:hover {
+  color: var(--primary);
 }
 
 .headerButtonsWrapper {
