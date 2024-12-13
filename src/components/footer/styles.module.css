@@ -49,3 +49,28 @@
 .footerBottomArea > span:nth-child(3) {
   justify-self: right;
 }
+
+@media screen and (max-width: 768px) {
+  .footerBottomArea {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "privacyPolicy n"
+      "companyName year";
+    row-gap: 1rem;
+  }
+
+  .footerBottomArea > span:nth-child(1) {
+    grid-area: companyName;
+    place-self: start;
+  }
+
+  .footerBottomArea > span:nth-child(2) {
+    grid-area: year;
+    place-self: end;
+  }
+
+  .footerBottomArea > span:nth-child(3) {
+    grid-area: privacyPolicy;
+    place-self: start;
+  }
+}
