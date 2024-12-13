@@ -161,6 +161,7 @@ const ContactUsForm = ({ children, className }) => {
               name="name"
               label={tInputs[0]["label"]}
               value={name.val}
+              errorMessage={name.error}
               onChange={updateName}
               placeholder="John Smith"
             />
@@ -169,6 +170,7 @@ const ContactUsForm = ({ children, className }) => {
               label={tInputs[1]["label"]}
               type="email"
               value={email.val}
+              errorMessage={email.error}
               onChange={updateEmail}
               placeholder="Mail@example.com"
             />
@@ -176,6 +178,7 @@ const ContactUsForm = ({ children, className }) => {
               label={tInputs[2]["label"]}
               type="number"
               value={phone.val}
+              errorMessage={phone.error}
               placeholder="(999)-999-99-99"
               onChange={updatePhone}
               onChangeCode={updateCountry}

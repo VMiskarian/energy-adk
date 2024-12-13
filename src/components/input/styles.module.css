@@ -18,3 +18,15 @@
   border: 0;
   width: inherit;
 }
+
+.inputError {
+  outline: 1px solid var(--accent-error);
+}
+
+.errorMessage {
+  margin-top: 0.125rem;
+  font-size: 0.625rem;
+  line-height: 120%;
+  text-transform: none;
+  color: var(--accent-error);
+}
