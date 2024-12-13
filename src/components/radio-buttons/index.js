@@ -1,13 +1,19 @@
-'use client';
+"use client";
 
-import { memo, useId } from 'react';
-import PropTypes from 'prop-types';
+import { memo, useId } from "react";
+import { useParams } from "next/navigation";
+import PropTypes from "prop-types";
 
-import { transportationRadioButtonOptions } from '@/constants';
+import { transportationRadioButtonOptions } from "@/constants";
+import getTranslation from "@/utils/i18n";
 
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 
 const RadioButtons = ({ title, value, onChange }) => {
+  const params = useParams();
+  const t = getTranslation(params.locale);
+  const tRadioButtons = t["requestModal"]["radioButtons"];
+  const tOptions = tRadioButtons["options"];
   const id = useId();
 
   const handleChange = (event) => {
@@ -20,7 +26,7 @@ const RadioButtons = ({ title, value, onChange }) => {
     <div className={styles.radioGroupWrapper}>
       <p className={styles.radioGroupTitle}>{title}</p>
       <div className={styles.radioGroup}>
-        {transportationRadioButtonOptions.map((option) => (
+        {transportationRadioButtonOptions.map((option, index) => (
           <label key={option.value} className={styles.radioButton}>
             <input
               type="radio"
@@ -31,7 +37,7 @@ const RadioButtons = ({ title, value, onChange }) => {
               onChange={handleChange}
             />
             <div className={styles.radioButtonIcon} />
-            <p className={styles.radioButtonText}>{option.label}</p>
+            <p className={styles.radioButtonText}>{tOptions[index]}</p>
           </label>
         ))}
       </div>

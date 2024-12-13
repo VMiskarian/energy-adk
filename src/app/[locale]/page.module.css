@@ -35,7 +35,7 @@
 .aboutCompanySection {
   padding: 8rem 0;
   background-repeat: no-repeat;
-  background-image: url('../assets/images/rectangle-4.png');
+  background-image: url('/images/rectangle-4.png');
   background-size: cover;
   background-color: var(--grey-100);
 }
@@ -70,7 +70,7 @@
   border-top-left-radius: 12rem;
   width: 29.125rem;
   height: 37.5rem;
-  background-image: url('../assets/images/rectangle-1.png');
+  background-image: url('/images/rectangle-1.png');
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -109,7 +109,7 @@
   background-color: var(--white);
 }
 
-.servicesSectionPrimaryLink {
+a.servicesSectionPrimaryLink {
   color: var(--white);
   border-color: var(--white);
 }
@@ -117,7 +117,7 @@
 .servicesSectionImageContainer {
   width: 29.125rem;
   height: 10.5rem;
-  background-image: url('../assets/images/rectangle-2.png');
+  background-image: url('/images/rectangle-2.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -197,7 +197,7 @@
   width: 100%;
   height: 100%;
   height: 208px;
-  background-image: url('../assets/images/rectangle-5.png');
+  background-image: url('/images/rectangle-5.png');
   background-size: cover;
 }
 

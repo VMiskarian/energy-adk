@@ -1,13 +1,17 @@
-import styles from './styles.module.css';
+import getTranslation from "@/utils/i18n";
 
-export const Footer = () => {
+import styles from "./styles.module.css";
+
+export const Footer = ({ locale }) => {
+  const t = getTranslation(locale);
+  const tFooter = t["footer"];
   const date = new Date();
   const year = date.getFullYear();
 
   return (
     <footer id="footer" className={styles.footer}>
       <div className={styles.footerContainer}>
-        <h2 className={styles.footerTitle}>Контакты</h2>
+        <h2 className={styles.footerTitle}>{tFooter["title"]}</h2>
         <ul className={styles.footerList}>
           <li className={styles.footerListItem}>
             <a
@@ -22,15 +26,12 @@ export const Footer = () => {
               +7 (920) 014 22 26
             </a>
           </li>
-          <li className={styles.footerListItem}>
-            107078, Россия, г. Москва, вн.тер.г. Муниципальный округ
-            Красносельский, пер. Басманный, д.5, помещ. 1, ком.1
-          </li>
+          <li className={styles.footerListItem}>{tFooter["address"]}</li>
         </ul>
         <div className={styles.footerBottomArea}>
-          <span>ООО &quot;ЭНЕРГИЯ&quot;</span>
+          <span>{tFooter["companyName"]}</span>
           <span>{year}</span>
-          <span>Политика конфиденциальности</span>
+          <span>{tFooter["privacyPolicy"]}</span>
         </div>
       </div>
     </footer>

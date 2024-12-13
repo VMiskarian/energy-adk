@@ -1,43 +1,45 @@
-'use client';
+"use client";
 
-import {
-  memo,
-  useRef,
-  useState,
-  useCallback,
-  useEffect,
-  Suspense,
-} from 'react';
-import dynamic from 'next/dynamic';
-import Image from 'next/image';
-import PropTypes from 'prop-types';
+import { memo, useRef, useState, useCallback, useEffect } from "react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import { useParams } from "next/navigation";
+import PropTypes from "prop-types";
 
-import Button from '@/components/button';
-import Input from '@/components/input';
-import RadioButtons from '@/components/radio-buttons';
-import ServiceSelector from '@/components/service-selector';
-import Cross from '@/assets/icons/cross.svg';
+import Button from "@/components/button";
+import Input from "@/components/input";
+import RadioButtons from "@/components/radio-buttons";
+import ServiceSelector from "@/components/service-selector";
+import Cross from "@/assets/icons/cross.svg";
+import getTranslation from "@/utils/i18n";
 
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 
-const TelInput = dynamic(() => import('@/components/tel-input'), {
+const TelInput = dynamic(() => import("@/components/tel-input"), {
   ssr: false,
 });
-const Toast = dynamic(() => import('@/components/toast'), {
+const Toast = dynamic(() => import("@/components/toast"), {
   ssr: false,
 });
-const Modal = dynamic(() => import('@/components/modal'), {
+const Modal = dynamic(() => import("@/components/modal"), {
   ssr: false,
 });
 
 const ContactUsForm = ({ children, className }) => {
-  const [name, setName] = useState({ val: '', error: null });
-  const [email, setEmail] = useState({ val: '', error: null });
-  const [country, setCountry] = useState({ val: '+7', error: null });
-  const [phone, setPhone] = useState({ val: '', error: null });
-  const [service, setService] = useState({ val: '', error: null });
+  const params = useParams();
+  const t = getTranslation(params.locale);
+  const tRequestModal = t["requestModal"];
+  const tInputs = tRequestModal["inputs"];
+  const tServicesSelector = tRequestModal["servicesSelector"];
+  const tRadioButtons = tRequestModal["radioButtons"];
+
+  const [name, setName] = useState({ val: "", error: null });
+  const [email, setEmail] = useState({ val: "", error: null });
+  const [country, setCountry] = useState({ val: "+7", error: null });
+  const [phone, setPhone] = useState({ val: "", error: null });
+  const [service, setService] = useState({ val: "", error: null });
   const [transportation, setTransportation] = useState({
-    val: '',
+    val: "",
     error: null,
   });
 
@@ -76,14 +78,14 @@ const ContactUsForm = ({ children, className }) => {
     if (!name.val) {
       setName((prevState) => ({
         ...prevState,
-        error: 'Это поле обязательно для заполнения',
+        error: tInputs[0]["error"],
       }));
       hasError = true;
     }
     if (!email.val) {
       setEmail((prevState) => ({
         ...prevState,
-        error: 'Это поле обязательно для заполнения',
+        error: tInputs[1]["error"][0],
       }));
       hasError = true;
     }
@@ -92,32 +94,32 @@ const ContactUsForm = ({ children, className }) => {
       hasError = !emailRegex.test(email.val);
       setEmail((prevState) => ({
         ...prevState,
-        error: hasError ? 'Почта некорректная' : null,
+        error: hasError ? tInputs[1]["error"][0] : null,
       }));
     }
     if (!phone.val) {
       setPhone((prevState) => ({
         ...prevState,
-        error: 'Это поле обязательно для заполнения',
+        error: tInputs[2]["error"],
       }));
       hasError = true;
     }
     if (!service.val) {
       setService((prevState) => ({
         ...prevState,
-        error: 'Нужно выбрать какой-нибудь вариант',
+        error: tServicesSelector["error"],
       }));
       hasError = true;
     }
     if (!transportation.val) {
       setTransportation((prevState) => ({
         ...prevState,
-        error: 'Нужно выбрать какой-нибудь вариант',
+        error: tRadioButtons["error"],
       }));
       hasError = true;
     }
     if (hasError) {
-      console.log('Error');
+      console.log("Error");
       setShowToast(true);
     } else {
       console.log({
@@ -153,25 +155,25 @@ const ContactUsForm = ({ children, className }) => {
 
       <Modal ref={modalRef}>
         <div className={styles.contactUsForm}>
-          <h3>Отправить заявку</h3>
+          <h3>{tRequestModal["title"]}</h3>
           <div className={styles.contactUsInputsWrapper}>
             <Input
               name="name"
-              label="Ваше имя"
+              label={tInputs[0]["label"]}
               value={name.val}
               onChange={updateName}
               placeholder="John Smith"
             />
             <Input
               name="email"
-              label="Email"
+              label={tInputs[1]["label"]}
               type="email"
               value={email.val}
               onChange={updateEmail}
               placeholder="Mail@example.com"
             />
             <TelInput
-              label="Телефон для связи"
+              label={tInputs[2]["label"]}
               type="number"
               value={phone.val}
               placeholder="(999)-999-99-99"
@@ -181,7 +183,7 @@ const ContactUsForm = ({ children, className }) => {
           </div>
           <ServiceSelector value={service.val} onChange={updateService} />
           <RadioButtons
-            title="Транспортировка"
+            title={tRadioButtons["title"]}
             value={transportation.val}
             onChange={updateTransportation}
           />
@@ -199,7 +201,7 @@ const ContactUsForm = ({ children, className }) => {
         </button>
 
         <Toast show={showToast} onClose={() => setShowToast(false)}>
-          Пожалуйста, заполните все обязательные поля
+          {tRequestModal["toast"]}
         </Toast>
       </Modal>
     </>

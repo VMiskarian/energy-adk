@@ -1,16 +1,23 @@
-'use client';
+"use client";
 
-import { memo, useId } from 'react';
-import Image from 'next/image';
-import PropTypes from 'prop-types';
+import { memo, useId } from "react";
+import Image from "next/image";
+import { useParams } from "next/navigation";
+import PropTypes from "prop-types";
 
-import { servicesRadioButtonOptions } from '@/constants';
-import Checkbox from '@/assets/icons/checkbox.svg';
+import { servicesRadioButtonOptions } from "@/constants";
+import Checkbox from "@/assets/icons/checkbox.svg";
+import getTranslation from "@/utils/i18n";
 
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 
 const ServiceSelector = ({ value, onChange }) => {
   const id = useId();
+  const params = useParams();
+  const t = getTranslation(params.locale);
+  const tRequestModal = t["requestModal"];
+  const tServicesSelector = tRequestModal["servicesSelector"];
+  const tServicesSelectorOptions = tServicesSelector["options"];
 
   const handleChange = (event) => {
     if (onChange) {
@@ -20,9 +27,11 @@ const ServiceSelector = ({ value, onChange }) => {
 
   return (
     <div className={styles.serviceSelectorWrapper}>
-      <p className={styles.serviceSelectorTitle}>услуги</p>
+      <p className={styles.serviceSelectorTitle}>
+        {tServicesSelector["title"]}
+      </p>
       <div role="radiogroup" className={styles.serviceSelector}>
-        {servicesRadioButtonOptions.map((option) => (
+        {servicesRadioButtonOptions.map((option, index) => (
           <label key={option.label} className={styles.serviceSelectorOption}>
             <input
               className={styles.serviceSelectorInput}
@@ -40,7 +49,9 @@ const ServiceSelector = ({ value, onChange }) => {
               aria-hidden
               alt=""
             />
-            <p className={styles.serviceSelectorText}>{option.label}</p>
+            <p className={styles.serviceSelectorText}>
+              {tServicesSelectorOptions[index]}
+            </p>
 
             <Image
               className={styles.serviceSelectorOptionIcon}
